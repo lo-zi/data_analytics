@@ -1,0 +1,24 @@
+import pandas as pd
+
+# Load the dataset
+df = pd.read_csv('data.csv')
+
+# Display the first few rows of the dataset
+print("First 5 rows of the dataset:")
+print(df.head())
+
+# Display basic statistics of the dataset
+print("\nBasic statistics of the dataset:")
+print(df.describe())
+
+# Check for missing values
+print("\nMissing values in the dataset:")
+print(df.isnull().sum())
+
+# Group by a specific column and calculate the mean
+grouped_data = df.groupby('column_name').mean()
+print("\nMean values grouped by 'column_name':")
+print(grouped_data)
+
+# Save the grouped data to a new CSV file
+grouped_data.to_csv('grouped_data.csv')
